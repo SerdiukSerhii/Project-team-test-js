@@ -1,4 +1,4 @@
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -144,4 +144,4 @@
   .sl-caption {
     display: block !important;
   }
-}
+} */

@@ -8,3 +8,19 @@ export async function fetchCategories() {
   const response = await axios.get('/categories');
   return response.data;
 }
+
+// ----------------------- Card-API---------------------------
+
+export async function fetchFurniture(category = '', page = 1) {
+  const params = {
+    page,
+    limit: 8,
+  };
+
+  if (category && category !== 'Всі товари') {
+    params.category = category;
+  }
+
+  const response = await axios.get('/furniture', { params });
+  return response.data;
+}

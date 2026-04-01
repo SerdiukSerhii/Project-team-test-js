@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.category-btn {
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.category-btn.is-active {
+  border-color: #8b0000;
+}
+
+.section-furniture {
+  padding: 48px 0;
+  background-color: #fff;
+}
+
+.title-furniture {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+  letter-spacing: 0.01em;
+  color: #080c09;
+
+  margin-bottom: 16px;
+}
+
+.text-furniture {
+  font-size: 18px;
+  line-height: 29px;
+  color: #080c09;
+
+  margin-bottom: 40px;
+}
+
+.categories-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
+
+  background-color: #cc6161;
+}
+
+.category-item {
+  display: flex;
+
+  border-radius: 8px;
+  width: 100%;
+  height: 122px;
+
+  flex-basis: calc((100% - 16px) / 2);
+}
+
+.category-btn {
+  display: flex;
+  width: 100%;
+}
+
+.furniture-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  background-color: #cc6161;
+}
+
+.furniture-item {
+  display: flex;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.furniture-thumb {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+
+  margin-bottom: 16px;
+}
+
+.furniture-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.furniture-heading {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 29px;
+  color: #080c09;
+
+  margin-bottom: 8px;
+}
+
+.furniture-color {
+  display: flex;
+  gap: 16px;
+}
+
+.furniture-color svg {
+  border: 1px solid #c7c3bb;
+  border-radius: 50%;
+}
+
+.furniture-price {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  color: #080c09;
+
+  margin-bottom: 16px;
+}
+
+.details-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 100px;
+  padding: 10px 24px;
+  width: 335px;
+  height: 46px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  color: #080c09;
+
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(8, 12, 9, 0.05),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.05);
+  background-color: rgba(8, 12, 9, 0.05);
+}
