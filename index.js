@@ -1,11 +1,29 @@
-import{a as l,S as d}from"./assets/vendor-DMAHcxl-.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))i(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const n of t.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&i(n)}).observe(document,{childList:!0,subtree:!0});function o(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function i(e){if(e.ep)return;e.ep=!0;const t=o(e);fetch(e.href,t)}})();l.defaults.baseURL="https://furniture-store-v2.b.goit.study/api";async function f(){return(await l.get("/categories")).data}document.getElementById("furniture-list");document.getElementById("categories");new d(".js-gallery a",{captions:!0,captionsData:"alt",captionDelay:250});function g(s){return["Всі товари",...s].map(o=>`
+import{a}from"./assets/vendor-Dl2X3eg5.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))n(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const o of s.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&n(o)}).observe(document,{childList:!0,subtree:!0});function i(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerPolicy&&(s.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?s.credentials="include":e.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function n(e){if(e.ep)return;e.ep=!0;const s=i(e);fetch(e.href,s)}})();a.defaults.baseURL="https://furniture-store-v2.b.goit.study/api";async function f(){return(await a.get("/categories")).data}async function y(r="",t=1){const i={page:t,limit:8};return r&&r!=="Всі товари"&&(i.category=r),(await a.get("/furniture",{params:i})).data}function g(r){return["Всі товари",...r].map(i=>`
         <li class="category-item">
-          <button class="category-btn" type="button" data-category="${o}">
-            ${o}
+          <button class="category-btn" type="button" data-category="${i}">
+            ${i}
           </button>
         </li>
-      `).join("")}const c=document.querySelector("#categories"),a=document.querySelector("#loader");async function y(){try{a.classList.remove("hidden");const s=await f(),r=g(s);c.innerHTML=r;const o=c.querySelector(".category-btn");o&&o.classList.add("is-active")}catch(s){console.error("Помилка при завантаженні категорій:",s)}finally{a.classList.add("hidden")}}//! ============= submit ======================================
-function u(s){const r=s.target.closest(".category-btn");if(!r)return;const o=c.querySelector(".category-btn.is-active");o&&o.classList.remove("is-active"),r.classList.add("is-active");const i=r.dataset.category;console.log(`Обрана категорія: ${i}`)}c.addEventListener("click",u);//! ============= submit ======================================
-y();u();//! ============= submit ======================================
+      `).join("")}function p(r){return r.map(({_id:t,img:i,name:n,color:e,price:s})=>{const o=Array.isArray(e)?e:[e];return`
+        <li class="furniture-item" data-id="${t}">
+          <div class="furniture-thumb">
+            <img src="${i}" alt="${n}" loading="lazy" />
+          </div>
+          <div class="furniture-info">
+            <h3 class="furniture-heading">${n}</h3>
+             <ul class="furniture-color">
+              ${o.map(d=>`
+                <li>
+                  <svg width="24" height="24">
+                    <circle cx="12" cy="12" r="10" fill="${d}" />
+                  </svg>
+                </li>
+              `).join("")}
+            </ul>
+            <p class="furniture-price">${s} грн</p>
+            <button class="details-btn" type="button">Детальніше</button>
+          </div>
+        </li>
+      `}).join("")}const c=document.querySelector("#categories"),m=document.querySelector("#furniture-list"),u=document.querySelector("#loader");async function h(){try{u.classList.remove("hidden");const r=await f();c.innerHTML=g(r);const t=c.querySelector(".category-btn");t&&t.classList.add("is-active"),l("Всі товари")}finally{u.classList.add("hidden")}}async function l(r="",t=1){const i=await y(r,t);m.innerHTML=p(i.results)}function L(r){var i;const t=r.target.closest(".category-btn");t&&((i=document.querySelector(".category-btn.is-active"))==null||i.classList.remove("is-active"),t.classList.add("is-active"),l(t.dataset.category))}c.addEventListener("click",L);document.addEventListener("DOMContentLoaded",()=>{h()});//! ============= submit ======================================
 //! =========== Click on pagination ===========
 //# sourceMappingURL=index.js.map
