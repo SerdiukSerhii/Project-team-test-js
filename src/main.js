@@ -1,14 +1,6 @@
 import './css/css-loader.css';
-import { getImagesByQuery } from './js/pixabay-api';
-import {
-  createGallery,
-  clearGallery,
-  showLoader,
-  hideLoader,
-  showPagination,
-  hidePagination,
-  renderPagination,
-} from './js/render-functions.js';
+// import { getImagesByQuery } from './js/pixabay-api';
+import { initCategories } from './js/furniture/furniture-list.js';
 
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
