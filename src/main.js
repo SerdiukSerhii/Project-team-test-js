@@ -1,18 +1,12 @@
 import './css/loader.css';
 import './css/filter-block.css';
 // import { getImagesByQuery } from './js/pixabay-api';
-import {
-  initCategories,
-  handleCategoryClick,
-} from './js/furniture/furniture-list.js';
 
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
+import { initCategories } from './furniture/furniture-list.js';
 
-// викликаємо функцію після імпорту
-initCategories();
-// renderFurnitureSection();
-handleCategoryClick();
+document.addEventListener('DOMContentLoaded', () => {
+  initCategories();
+});
 
 // const refs = {
 //   formElem: document.querySelector('.js-form'),
