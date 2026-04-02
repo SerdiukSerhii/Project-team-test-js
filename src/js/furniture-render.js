@@ -1,9 +1,9 @@
 // -------------------------- filtering ------------------------
 
 export function createCategoriesMarkup(categories) {
-  const allCategories = [{ name: 'Всі товари', _id: '' }, ...categories];
+  // const allCategories = [{ name: 'Всі товари', _id: '' }, ...categories];
 
-  return allCategories
+  return categories
     .map(
       category => `
         <li class="category-item">
