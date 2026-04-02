@@ -2,7 +2,7 @@ import './css/loader.css';
 import './css/filter-block.css';
 // import { getImagesByQuery } from './js/pixabay-api';
 
-import { initCategories } from './js/furniture/furniture-list.js';
+import { initCategories } from './js/furniture-list.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initCategories();

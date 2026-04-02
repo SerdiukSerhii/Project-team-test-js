@@ -27,6 +27,7 @@ export async function initCategories() {
 export async function renderFurnitureSection(category = '', page = 1) {
   const data = await fetchFurniture(category, page);
   furnitureList.innerHTML = createFurnitureMarkup(data.results);
+  console.log(data);
 }
 
 export function handleCategoryClick(event) {

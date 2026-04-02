@@ -21,6 +21,6 @@ export async function fetchFurniture(category = '', page = 1) {
     params.category = category;
   }
 
-  const response = await axios.get('/furniture', { params });
+  const response = await axios.get('/furnitures', { params });
   return response.data;
 }
