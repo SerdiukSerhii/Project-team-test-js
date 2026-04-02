@@ -1,18 +1,21 @@
 // -------------------------- filtering ------------------------
 
 export function createCategoriesMarkup(categories) {
-  const allCategories = ['Всі товари', ...categories];
+  const allCategories = [{ name: 'Всі товари', _id: '' }, ...categories];
 
   return allCategories
-    .map(category => {
-      return `
+    .map(
+      category => `
         <li class="category-item">
-          <button class="category-btn" type="button" data-category="${category}">
-            ${category}
+          <button
+            class="category-btn"
+            type="button"
+            data-category="${category._id}">
+            ${category.name}
           </button>
         </li>
-      `;
-    })
+      `
+    )
     .join('');
 }
 
@@ -20,17 +23,19 @@ export function createCategoriesMarkup(categories) {
 
 export function createFurnitureMarkup(items) {
   return items
-    .map(({ _id, img, name, color, price }) => {
+    .map(item => {
+      const { _id, name, images = [], color = [], price = 0 } = item;
+      const imgSrc = images[0] || 'placeholder.jpg';
       const colors = Array.isArray(color) ? color : [color];
 
       return `
         <li class="furniture-item" data-id="${_id}">
           <div class="furniture-thumb">
-            <img src="${img}" alt="${name}" loading="lazy" />
+            <img src="${imgSrc}" alt="${name}" loading="lazy" />
           </div>
           <div class="furniture-info">
             <h3 class="furniture-heading">${name}</h3>
-             <ul class="furniture-color">
+            <ul class="furniture-color">
               ${colors
                 .map(
                   color => `
