@@ -72,3 +72,7 @@ export function createFurnitureMarkup(items) {
     })
     .join('');
 }
+
+export function appendFurniture(container, items) {
+  container.insertAdjacentHTML('beforeend', createFurnitureMarkup(items));
+}
