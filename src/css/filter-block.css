@@ -211,8 +211,12 @@
   transition: opacity 0.3s ease-in-out;
 }
 
-.load-more.hidden {
+.load-more.is-hidden {
   display: none;
+}
+
+.loader.is-visible {
+  display: block;
 }
 
 .load-more:hover,
