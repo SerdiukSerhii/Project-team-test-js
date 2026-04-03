@@ -8,10 +8,12 @@ import {
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const categoriesList = document.querySelector('#categories');
-const furnitureList = document.querySelector('#furniture-list');
-const loadMoreBtn = document.querySelector('#load-more');
-const loader = document.querySelector('#loader');
+const refs = {
+  categoriesList: document.querySelector('#categories'),
+  furnitureList: document.querySelector('#furniture-list'),
+  loadMoreBtn: document.querySelector('#load-more'),
+  loader: document.querySelector('#loader'),
+};
 
 let currentCategory = '';
 let currentPage = 1;
@@ -35,7 +37,7 @@ const CATEGORIES_ORDER = [
 // ---------------- init ----------------
 export async function initCategories() {
   try {
-    loader.classList.remove('hidden');
+    refs.loader.classList.remove('hidden');
     const apiCategories = await fetchCategories();
 
     const finalCategories = CATEGORIES_ORDER.map(name => {
@@ -46,16 +48,16 @@ export async function initCategories() {
       };
     });
 
-    categoriesList.innerHTML = createCategoriesMarkup(finalCategories);
+    refs.categoriesList.innerHTML = createCategoriesMarkup(finalCategories);
 
-    const firstBtn = categoriesList.querySelector('.category-btn');
+    const firstBtn = refs.categoriesList.querySelector('.category-btn');
     if (firstBtn) firstBtn.classList.add('is-active');
 
     await renderFurnitureSection('', 1);
   } catch (error) {
     console.error(error);
   } finally {
-    loader.classList.add('hidden');
+    refs.loader.classList.add('hidden');
   }
 }
 
@@ -75,15 +77,15 @@ export async function renderFurnitureSection(category = '', page = 1) {
     const totalPages = Math.ceil(totalItems / limit);
 
     if (page === 1) {
-      furnitureList.innerHTML = '';
+      refs.furnitureList.innerHTML = '';
       if (items.length === 0) {
         iziToast.info({ message: 'Товарів не знайдено', position: 'topRight' });
         hideLoadMoreButton();
         return data;
       }
-      furnitureList.innerHTML = createFurnitureMarkup(items);
+      refs.furnitureList.innerHTML = createFurnitureMarkup(items);
     } else {
-      appendFurniture(furnitureList, items);
+      appendFurniture(refs.furnitureList, items);
     }
 
     if (page >= totalPages || items.length < limit) {
@@ -102,7 +104,7 @@ export async function renderFurnitureSection(category = '', page = 1) {
     return data;
   } catch (error) {
     hideLoadMoreButton();
-    furnitureList.innerHTML = '';
+    refs.furnitureList.innerHTML = '';
     iziToast.error({
       message: 'Сталася помилка. Спробуйте пізніше',
       position: 'topRight',
@@ -128,11 +130,11 @@ async function handleCategoryClick(event) {
   await renderFurnitureSection(currentCategory, currentPage);
 }
 
-categoriesList.addEventListener('click', handleCategoryClick);
+refs.categoriesList.addEventListener('click', handleCategoryClick);
 
 // ------------------------------ load more----------------------
 
-loadMoreBtn.addEventListener('click', async () => {
+refs.loadMoreBtn.addEventListener('click', async () => {
   currentPage += 1;
   hideLoadMoreButton();
   showLoader();
@@ -156,17 +158,17 @@ loadMoreBtn.addEventListener('click', async () => {
 });
 
 function showLoader() {
-  loader.classList.add('is-visible');
+  refs.loader.classList.add('is-visible');
 }
 
 function hideLoader() {
-  loader.classList.remove('is-visible');
+  refs.loader.classList.remove('is-visible');
 }
 
 function showLoadMoreButton() {
-  loadMoreBtn.classList.add('is-visible');
+  refs.loadMoreBtn.classList.add('is-visible');
 }
 
 function hideLoadMoreButton() {
-  loadMoreBtn.classList.remove('is-visible');
+  refs.loadMoreBtn.classList.remove('is-visible');
 }
