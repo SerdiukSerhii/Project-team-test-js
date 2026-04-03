@@ -54,7 +54,6 @@
 
   color: #ffffff;
 
-  /* color: #080c09; */
   font-size: 16px;
   font-weight: 600;
   text-align: center;
@@ -77,66 +76,79 @@
   transition:
     transform 250ms ease,
     border-color 250ms ease;
-
-  background-color: aqua;
 }
 
 .all-products {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     image-set(
-      url('../img/all-products.webp') 1x, url('../img/all-products@2x.webp') 2x);
+      url('../img/all-products.webp') 1x,
+      url('../img/all-products@2x.webp') 2x
+    );
 }
 .sofas {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url('../img/sofas.webp') 1x, url('../img/sofas@2x.webp') 2x) ;
+    image-set(url('../img/sofas.webp') 1x, url('../img/sofas@2x.webp') 2x);
 }
 .wardrobes {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url("../img/wardrobes.webp") 1x, url("../img/wardrobes@2x.webp") 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(
+      url('../img/wardrobes.webp') 1x,
+      url('../img/wardrobes@2x.webp') 2x
+    );
 }
 .beds {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url("../img/beds.webp") 1x, url("../img/beds@2x.webp") 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/beds.webp') 1x, url('../img/beds@2x.webp') 2x);
 }
 .tables {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url("../img/tables.webp") 1x, url("../img/tables@2x.webp") 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/tables.webp') 1x, url('../img/tables@2x.webp') 2x);
 }
 .chairs {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url("../img/chairs.webp") 1x, url("../img/chairs@2x.webp") 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/chairs.webp') 1x, url('../img/chairs@2x.webp') 2x);
 }
 .kitchens {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url("../img/kitchens.webp") 1x, url("../img/kitchens@2x.webp") 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/kitchens.webp') 1x, url('../img/kitchens@2x.webp') 2x);
 }
 .kids {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url("../img/kids.webp") 1x, url("../img/kids@2x.webp") 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/kids.webp') 1x, url('../img/kids@2x.webp') 2x);
 }
 .office {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url("../img/office.webp") 1x, url("../img/office@2x.webp") 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/office.webp') 1x, url('../img/office@2x.webp') 2x);
 }
 .hallway {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url("../img/hallway.webp") 1x, url("../img/hallway@2x.webp") 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/hallway.webp') 1x, url('../img/hallway@2x.webp') 2x);
 }
 .bathroom {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url("../img/bathroom.webp") 1x, url("../img/bathroom@2x.webp") 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/bathroom.webp') 1x, url('../img/bathroom@2x.webp') 2x);
 }
 .outdoor {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url("../img/outdoor.webp") 1x, url("../img/outdoor@2x.webp") 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/outdoor.webp') 1x, url('../img/outdoor@2x.webp') 2x);
 }
 .decor {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    image-set(url("../img/decor.webp") 1x, url("../img/decor@2x.webp") 2x);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    image-set(url('../img/decor.webp') 1x, url('../img/decor@2x.webp') 2x);
 }
-
 
 .category-btn:hover,
 .category-btn:focus {
@@ -278,8 +290,8 @@
   display: none;
 }
 
-.loader.is-visible {
-  display: block;
+.load-more.is-hidden {
+  display: flex;
 }
 
 .load-more:hover,
