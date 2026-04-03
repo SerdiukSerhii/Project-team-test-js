@@ -1,21 +1,37 @@
 // -------------------------- filtering ------------------------
 
-export function createCategoriesMarkup(categories) {
-  // const allCategories = [{ name: 'Всі товари', _id: '' }, ...categories];
+const SLUGS = [
+  'all-products',
+  'sofas',
+  'wardrobes',
+  'beds',
+  'tables',
+  'chairs',
+  'kitchens',
+  'kids',
+  'office',
+  'hallway',
+  'bathroom',
+  'outdoor',
+  'decor',
+];
 
+export function createCategoriesMarkup(categories) {
   return categories
-    .map(
-      category => `
+    .map((category, index) => {
+      const categoryClass = SLUGS[index] || 'default';
+
+      return `
         <li class="category-item">
           <button
-            class="category-btn"
+            class="category-btn ${categoryClass}"
             type="button"
             data-category="${category._id}">
             ${category.name}
           </button>
         </li>
-      `
-    )
+      `;
+    })
     .join('');
 }
 
@@ -41,7 +57,7 @@ export function createFurnitureMarkup(items) {
                   color => `
                 <li>
                   <svg width="24" height="24">
-                    <circle cx="12" cy="12" r="10" fill="${color}" />
+                    <circle cx="12" cy="12" r="12" fill="${color}" />
                   </svg>
                 </li>
               `
