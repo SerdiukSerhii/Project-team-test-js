@@ -51,22 +51,30 @@ export function createFurnitureMarkup(items) {
           </div>
           <div class="furniture-info">
             <h3 class="furniture-heading">${name}</h3>
-            <ul class="furniture-color">
-              ${colors
-                .map(
-                  color => `
-                <li>
-                  <svg width="24" height="24">
-                    <circle cx="12" cy="12" r="12" fill="${color}" />
-                  </svg>
-                </li>
-              `
-                )
-                .join('')}
-            </ul>
-            <p class="furniture-price">${price} грн</p>
-            <button class="details-btn" type="button">Детальніше</button>
+
+
+                <div class="container-colors">
+                  <ul class="furniture-color">
+                      ${colors
+                        .map(
+                          color => `
+                        <li>
+                          <svg width="24" height="24">
+                            <circle cx="12" cy="12" r="12" fill="${color}" />
+                          </svg>
+                        </li>
+                      `
+                        )
+                        .join('')}
+                   </ul>
+               </div>
+                    <p class="furniture-price">${price} грн</p>
+
+
+
+
           </div>
+             <button class="details-btn" type="button">Детальніше</button>
         </li>
       `;
     })
